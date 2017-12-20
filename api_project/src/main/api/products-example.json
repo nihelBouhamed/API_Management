@@ -1,0 +1,35 @@
+{
+  "_embedded": {
+    "products": [
+      {
+        "name": "Sample Product",
+        "_links": {
+          "self": {
+            "href": "http://localhost:9999/product-service/products/1"
+          },
+          "product": {
+            "href": "http://localhost:9999/product-service/products/1"
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "http://localhost:9999/product-service/products{?page,size,sort}",
+      "templated": true
+    },
+    "profile": {
+      "href": "http://localhost:9999/product-service/profile/products"
+    },
+    "search": {
+      "href": "http://localhost:9999/product-service/products/search"
+    }
+  },
+  "page": {
+    "size": 20,
+    "totalElements": 3,
+    "totalPages": 1,
+    "number": 0
+  }
+}

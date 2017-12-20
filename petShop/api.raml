@@ -1,0 +1,23 @@
+#%RAML 1.0
+traits:
+  FiltrableByPrice:
+    queryParameters:
+      priceLessThan: number
+      priceMoreThan: number
+resourceTypes:
+title: Pet Shop
+uses:
+  PetTypes: PetTypes.raml
+version: v1
+baseUri: /petshop
+/pets:
+  type: { PetTypes.Collection: {item : PetTypes.Pet} }
+  get:
+    queryParameters:
+      petKind:
+        enum:
+          - bird
+          - dog
+    is: [FiltrableByPrice]
+  /{id}:
+    type: { PetTypes.Member: {item : PetTypes.Pet} }

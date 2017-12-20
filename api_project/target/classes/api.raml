@@ -1,0 +1,12 @@
+#%RAML 1.0
+title: Micro-API
+version: v1
+baseUri: http://products.tn
+/products:
+  get:
+    description: List of all the products
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include products-example.json
